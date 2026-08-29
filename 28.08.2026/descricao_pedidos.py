@@ -3,5 +3,6 @@ def descrever_pedidos (cliente, **extras):
     for chave, valor in extras.items(): 
         print (f"{chave} - {valor}")
 
-dados = descrever_pedidos("Ana", observacao = "Sem cebola", retirada = False)
-
+dados = {"observacao":"Sem cebola", "retirada":False}
+cliente = "Ana"
+descrever_pedidos (cliente, **dados)
