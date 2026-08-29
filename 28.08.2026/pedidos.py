@@ -9,20 +9,27 @@ def cadastrarProdutos():
     produtos = []
 
     while True:
-        produto = input("Nome do produto (ou digite 'fim' para encerrar):")
-        if produto == "fim":
+        produto = input("Nome do produto (ou digite 'fim' para encerrar): ")
+
+        if produto.lower() == "fim":
             break
-        valor = float(input(f"valor de {produto}"))
+
+        valor = float(input(f"Valor de {produto}: "))
         produtos.append({"nome": produto, "valor": valor})
+
     return produtos
 
+def calcularTotal(produtos):
 
-def calcularTotal(valores):
+    valores = [p["valor"] for p in produtos]
+
     subtotal = sum(valores)
-    taxaEntrega = 5.0
-    total = subtotal + taxaEntrega
-    return subtotal, total
 
+    taxaEntrega = 5.0
+
+    total = subtotal + taxaEntrega
+
+    return subtotal, total
 
 def emitirRecibo(cliente, produtos, subtotal, total):
     print("=== Recibo ===")

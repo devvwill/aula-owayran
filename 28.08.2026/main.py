@@ -1,6 +1,11 @@
-from pedidos import cadastrarClientes, cadastrarProdutos, calcularTotal, emitirRecibo
-
+from pedidos import cadastrarClientes
 cadastro = cadastrarClientes()
+
+from pedidos import cadastrarProdutos
 item = cadastrarProdutos()
-total = calcularTotal()
-recibo = emitirRecibo()
+
+from pedidos import calcularTotal
+subtotal, total = calcularTotal(item)
+
+from pedidos import emitirRecibo
+emitirRecibo(cadastro, item, subtotal, total)
