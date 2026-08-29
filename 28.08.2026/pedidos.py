@@ -34,8 +34,3 @@ def emitirRecibo(cliente, produtos, subtotal, total):
     print(f"total a pagar = {total:.2f}")
 
 
-cliente = cadastrarClientes()
-produtos = cadastrarProdutos()
-valores = [p["valor"] for p in produtos]
-subtotal, total = calcularTotal(valores)
-emitirRecibo(cliente, produtos, subtotal, total)
